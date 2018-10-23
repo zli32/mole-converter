@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-import os
 import sys
-from PySide.QtCore import *
 from PySide.QtGui import *
-from periodictable import *
 from periodicDict import periodicMasses
 from ui_moleConvert import Ui_MainWindow
 
