@@ -10,7 +10,6 @@ from ui_moleConvert import Ui_MainWindow
 
 # checks if a number can be made a float
 def checkFloat(num):
-    print "checkFloat triggered"
     num = eval(num)
     try:
         float(num)
@@ -113,7 +112,6 @@ def formulaParse(formula):
     if formula == '':
         return False
     else: pass
-    print components
 
 
 # Properly splits up element symbols and subscripts
@@ -124,7 +122,6 @@ def componentsParse():
     correctIndex = 0
     repeat = False
     for x in range(0, len(components)):
-        print("correctIndex: " + str(correctIndex))
         # Ensures no repeated numbers are appended to the list
         if repeat == True and x < len(components):
             correctIndex += numLength
@@ -134,7 +131,6 @@ def componentsParse():
             if correctIndex < len(components):
                 i = components[correctIndex]
             else:
-                print unitList
                 return
             # Appends symbols and subscripts as separate units into unitList
             if not checkInt(i):
@@ -162,7 +158,6 @@ def componentsParse():
             else:
                 pass
             correctIndex += 1
-    print unitList
 
 
 # Calculates the atomic mass of the formula
@@ -237,9 +232,7 @@ def unitsToMoles():
 # Converts given unit value to atom value
 def unitsToAtoms():
     global atoms
-    print elementNum
     atoms = float(units) * elementNum
-    print atoms
 
 
 # Converts given atom value to unit value
@@ -256,7 +249,6 @@ def gramsSolver(unit, chemFormula):
         return "Can't convert to same unit"
     elif unit == 'Moles':
         gramsToMoles()
-        print mass
         return str(moles) + ' moles of ' + str(chemFormula)
     elif unit == 'Molecules':
         gramsToMoles()
